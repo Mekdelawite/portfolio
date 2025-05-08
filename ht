@@ -1,0 +1,37 @@
+/* Radial Bar Status */
+.radial-bar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.radial-bar .radial-bars {
+    width: 50%;
+    height: 170px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes animate-progress {
+    to {
+        stroke-dashoffset: var(--offset); /* Dynamically set offset for each circle */
+    }
+}
+
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
