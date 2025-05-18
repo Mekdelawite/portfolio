@@ -35,8 +35,8 @@ function toggleAnimation() {
 const toggleButton = document.createElement('button');
 toggleButton.textContent = 'Toggle Animation';
 toggleButton.style.position = 'fixed';
-toggleButton.style.bottom = '20px';
-toggleButton.style.left = '20px';
+toggleButton.style.bottom = '10px';
+toggleButton.style.left = '10px';
 toggleButton.style.padding = '10px 20px';
 toggleButton.style.backgroundColor = '#0ef';
 toggleButton.style.color = '#081b29';
@@ -89,3 +89,24 @@ menuIcon.addEventListener('click', toggleNavbar);
 
 // Initial check on page load
 handleResize();
+
+    // Fade-in on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        function checkFade() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                // Trigger fade when element is 80% in view
+                if (elementTop < windowHeight * 0.8) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        // Run on load and scroll
+        window.addEventListener('load', checkFade);
+        window.addEventListener('scroll', checkFade);
+    });
